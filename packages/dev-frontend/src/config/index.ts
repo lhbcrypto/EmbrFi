@@ -11,7 +11,7 @@ export type LiquityFrontendConfig = {
 
 const defaultConfig: LiquityFrontendConfig = {
   frontendTag: AddressZero,
-  walletConnectProjectId: "b16efb4fd41473c0f45dbad8efa15a00"
+  walletConnectProjectId: "fa5eaaa98e74f2913890bf6d43025b2a"
 };
 
 function hasKey<K extends string>(o: object, k: K): o is Record<K, unknown> {

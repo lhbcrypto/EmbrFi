@@ -1,5 +1,6 @@
 /* Can't style the html tag with theme-ui, so put styles in here */
-
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
 html {
   height: 100%;
+  font-family: 'Baloo 2', cursive;
 }

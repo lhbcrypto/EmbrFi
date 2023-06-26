@@ -16,7 +16,7 @@ test("there's no smoke", async () => {
   fireEvent.click(await findByText(/connect wallet/i));
   fireEvent.click(getByText(/browser wallet/i));
 
-  expect(await findByText(/you can borrow lusd by opening a trove/i)).toBeInTheDocument();
+  expect(await findByText(/you can borrow EUSD by opening a trove/i)).toBeInTheDocument();
 
   fireEvent.click(getByText(/open trove/i));
   fireEvent.click(getByLabelText(/collateral/i));

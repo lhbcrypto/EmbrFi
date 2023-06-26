@@ -27,13 +27,6 @@ const Balances: React.FC = () => {
   );
 };
 
-const GitHubCommit: React.FC<{ children?: string }> = ({ children }) =>
-  children?.match(/[0-9a-f]{40}/) ? (
-    <Link href={`https://github.com/liquity/dev/commit/${children}`}>{children.substr(0, 7)}</Link>
-  ) : (
-    <>unknown</>
-  );
-
 type SystemStatsProps = {
   variant?: string;
   showBalances?: boolean;
@@ -95,7 +88,7 @@ export const SystemStats: React.FC<SystemStatsProps> = ({ variant = "info", show
       <Statistic lexicon={l.BORROW_FEE}>{borrowingFeePct.toString(2)}</Statistic>
 
       <Statistic lexicon={l.TVL}>
-        {total.collateral.shorten()} <Text sx={{ fontSize: 1 }}>&nbsp;ETH</Text>
+        {total.collateral.shorten()} <Text sx={{ fontSize: 1 }}>&nbsp;BTC.b</Text>
         <Text sx={{ fontSize: 1 }}>
           &nbsp;(${Decimal.from(total.collateral.mul(price)).shorten()})
         </Text>
@@ -115,25 +108,7 @@ export const SystemStats: React.FC<SystemStatsProps> = ({ variant = "info", show
       </Statistic>
       {}
 
-      <Heading as="h2" sx={{ mt: 3, fontWeight: "body" }}>
-        Frontend
-      </Heading>
-      {kickbackRatePct && <Statistic lexicon={l.KICKBACK_RATE}>{kickbackRatePct}%</Statistic>}
 
-      <Box sx={{ mt: 3, opacity: 0.66 }}>
-        <Box sx={{ fontSize: 0 }}>
-          Contracts version: <GitHubCommit>{contractsVersion}</GitHubCommit>
-        </Box>
-        <Box sx={{ fontSize: 0 }}>Deployed: {deploymentDate.toLocaleString()}</Box>
-        <Box sx={{ fontSize: 0 }}>
-          Frontend version:{" "}
-          {import.meta.env.DEV ? (
-            "development"
-          ) : (
-            <GitHubCommit>{import.meta.env.VITE_APP_VERSION}</GitHubCommit>
-          )}
-        </Box>
-      </Box>
     </Card>
   );
 };

@@ -18,12 +18,12 @@ export const Nav: React.FC = () => {
         <Link to="/">Dashboard</Link>
         <Link to="/bonds">
           <Flex sx={{ alignItems: "center" }}>
-            <Text>Bonds</Text>
+            <Text>Coming Soon</Text>
             <TemporaryNewBadge />
           </Flex>
         </Link>
       </Flex>
-      <Flex sx={{ justifyContent: "flex-end", mr: 3, flex: 1 }}>
+      <Flex sx={{ justifyContent: "flex-end", mr: 1, flex: 1 }}>
         <Link sx={{ fontSize: 1 }} to="/risky-troves">
           Risky Troves
         </Link>

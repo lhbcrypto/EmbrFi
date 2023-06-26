@@ -43,13 +43,13 @@ export const Yield: React.FC = () => {
 
   return (
     <Badge>
-      <Text>LQTY APR {aprPercentage.toString(2)}%</Text>
+      <Text>EMBR APR {aprPercentage.toString(2)}%</Text>
       <InfoIcon
         tooltip={
           <Card variant="tooltip" sx={{ width: ["220px", "518px"] }}>
             <Paragraph>
-              An <Text sx={{ fontWeight: "bold" }}>estimate</Text> of the LQTY return on the LUSD
-              deposited to the Stability Pool over the next year, not including your ETH gains from
+              An <Text sx={{ fontWeight: "bold" }}>estimate</Text> of the EMBR return on the EUSD
+              deposited to the Stability Pool over the next year, not including your BTC.b gains from
               liquidations.
             </Paragraph>
             <Paragraph sx={{ fontSize: "12px", fontFamily: "monospace", mt: 2 }}>

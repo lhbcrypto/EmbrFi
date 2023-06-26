@@ -23,7 +23,7 @@ const alchemyUrl = () => {
 }
 
 const alchemyUrlRinkeby = () => {
-    return `https://eth-rinkeby.alchemyapi.io/v2/${getSecret('alchemyAPIKeyRinkeby')}`
+    return `https://eth-rinkeby.alchemyapi.io/v2/${getSecret('mHBdAgNbXPUJ2R6jGCqRveWOxqD0hIqy')}`
 }
 
 module.exports = {

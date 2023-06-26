@@ -11,9 +11,9 @@ const baseColors = {
 };
 
 const colors = {
-  primary: baseColors.blue,
-  secondary: baseColors.purple,
-  accent: baseColors.cyan,
+  primary: "#f97871ff",
+  secondary: "#fda48cff",
+  accent: baseColors.red,
 
   success: baseColors.green,
   warning: baseColors.yellow,
@@ -22,10 +22,11 @@ const colors = {
   info: baseColors.blue,
   invalid: "pink",
 
-  text: "#293147",
-  background: "white",
-  muted: "#eaebed",
-  highlight: "#efeffe"
+  text: "#373555ff",
+  //top bar with gradient
+  background: "#fdfce3ff",
+  muted: "#c2cad8ff",
+  highlight: baseColors.red
 };
 
 const buttonBase: ThemeUIStyleObject = {
@@ -90,15 +91,15 @@ const card: ThemeUIStyleObject = {
   border: 1,
   boxShadow: [1, null, 2]
 };
-
+//search side-card go here to change 
 const infoCard: ThemeUIStyleObject = {
   ...card,
 
   padding: 3,
 
-  borderColor: "rgba(122,199,240,0.4)",
-  background: "linear-gradient(200deg, #d4d9fc, #cae9f9)",
-
+  borderColor: "background",
+  //background: "linear-gradient(200deg, #d4d9fc, #cae9f9)", 909db8ff
+  background: "#c2cad8ff",
   h2: {
     mb: 2,
     fontSize: cardHeadingFontSize
@@ -142,7 +143,7 @@ const modalOverlay: ThemeUIStyleObject = {
 };
 
 const headerGradient: ThemeUIStyleObject = {
-  background: `linear-gradient(90deg, ${colors.background}, ${colors.muted})`
+  background: `linear-gradient(90deg, ${colors.background}, {"#fdfce3ff")`
 };
 
 const theme: Theme = {
@@ -152,7 +153,7 @@ const theme: Theme = {
 
   fonts: {
     body: [
-      "system-ui",
+      "Baloo 2",
       "-apple-system",
       "BlinkMacSystemFont",
       '"Segoe UI"',
@@ -343,7 +344,7 @@ const theme: Theme = {
   layout: {
     header: {
       display: "flex",
-      justifyContent: "space-between",
+      justifyContent: "normal",
       alignItems: "stretch",
 
       position: ["fixed", "relative"],

@@ -22,7 +22,7 @@ const select = ({ accountBalance, lusdBalance, lqtyBalance }: LiquityStoreState)
 export const UserAccount: React.FC = () => {
   const { account } = useLiquity();
   const { accountBalance, lusdBalance: realLusdBalance, lqtyBalance } = useLiquitySelector(select);
-  const { bLusdBalance, lusdBalance: customLusdBalance } = useBondView();
+  const { lusdBalance: customLusdBalance } = useBondView();
   const { LUSD_OVERRIDE_ADDRESS } = useBondAddresses();
 
   const lusdBalance = LUSD_OVERRIDE_ADDRESS === null ? realLusdBalance : customLusdBalance;
@@ -53,10 +53,9 @@ export const UserAccount: React.FC = () => {
         <Icon name="wallet" size="lg" />
 
         {([
-          ["ETH", accountBalance],
+          ["BTC", accountBalance],
           [COIN, Decimal.from(lusdBalance || 0)],
           [GT, Decimal.from(lqtyBalance)],
-          ["bLUSD", Decimal.from(bLusdBalance || 0)]
         ] as const).map(([currency, balance], i) => (
           <Flex key={i} sx={{ ml: 3, flexDirection: "column" }}>
             <Heading sx={{ fontSize: 1 }}>{currency}</Heading>
